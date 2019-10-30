@@ -10,15 +10,15 @@ import UIKit
 
 class FoodTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var nameLabel: UILabel?
+    var caloriesLabel: UILabel?
+    var iconFoodImage: UIImage?
+    
+    func setName(name: String, calories: Int, image: String) {
+        nameLabel = UILabel(frame: CGRect(x: 10, y: 15, width: 140, height: 40))
+        nameLabel?.text = name
+        
+        caloriesLabel = UILabel(frame: CGRect(x: 160, y: 15, width: 140, height: 40))
+        caloriesLabel?.text = "\(calories) cals"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
