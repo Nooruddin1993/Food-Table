@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+    @IBOutlet weak var tableView: UITableView!
     var foods: [String]?
     var calories: [Int]?
 //    var healthyFoods : [String]?
@@ -20,6 +21,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         foods = ["Apple", "Banana", "Burger", "Fries", "Orange", "Pizza"]
         calories = [50, 60, 900, 600, 30, 700]
+        
+        tableView.register(FoodTableViewCell.self, forCellReuseIdentifier: "Food Cell")
 //        healthyFoods = ["Apple", "Banana", "Orange"]
 //        unHealthyFoods = ["Burger", "Fries", "Pizza"]
     }
@@ -41,12 +44,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard foods != nil else {return UITableViewCell()}
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "")
+//        let cell = UITableViewCell(style: .value1, reuseIdentifier: "")
+//        let foodName = foods![indexPath.row]
+//        cell.textLabel?.text = foodName
+//        cell.imageView?.image = UIImage(named: foodName)
+//        cell.detailTextLabel?.text = "Calories \(calories![indexPath.row])"
+//        return cell
+        
         let foodName = foods![indexPath.row]
-        cell.textLabel?.text = foodName
-        cell.imageView?.image = UIImage(named: foodName)
-        cell.detailTextLabel?.text = "Calories \(calories![indexPath.row])"
+        let foodCalory = calories![indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Food Cell") as! FoodTableViewCell
+        cell.setName(name: foodName, calories: foodCalory, image: foodName)
         return cell
+        
      /*   guard foods != nil else { return UITableViewCell()}
         let cell = UITableViewCell(style: .default, reuseIdentifier: "")
         let foodName = foods![indexPath.row]

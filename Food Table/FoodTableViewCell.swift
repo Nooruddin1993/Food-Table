@@ -12,7 +12,7 @@ class FoodTableViewCell: UITableViewCell {
 
     var nameLabel: UILabel?
     var caloriesLabel: UILabel?
-    var iconFoodImage: UIImage?
+    var iconFoodImage: UIImageView?
     
     func setName(name: String, calories: Int, image: String) {
         nameLabel = UILabel(frame: CGRect(x: 10, y: 15, width: 140, height: 40))
@@ -20,5 +20,12 @@ class FoodTableViewCell: UITableViewCell {
         
         caloriesLabel = UILabel(frame: CGRect(x: 160, y: 15, width: 140, height: 40))
         caloriesLabel?.text = "\(calories) cals"
+        
+        iconFoodImage = UIImageView(image: UIImage(named: image))
+        iconFoodImage?.frame = CGRect(x: 310, y: 1, width: 40, height: 40)
+        
+        self.contentView.addSubview(nameLabel!)
+        self.contentView.addSubview(caloriesLabel!)
+        self.contentView.addSubview(iconFoodImage!)
     }
 }

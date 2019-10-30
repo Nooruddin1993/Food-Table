@@ -23,14 +23,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hPG-HB-DRj"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NaJ-kc-AW9"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="swK-2D-ilL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ga3-eg-sFp"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="agf-Q1-Eeu" id="C3T-qG-L3j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
